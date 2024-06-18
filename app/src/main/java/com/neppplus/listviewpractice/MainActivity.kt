@@ -40,10 +40,20 @@ class MainActivity : AppCompatActivity() {
         val studentListView = findViewById<ListView>(R.id.studentListView)
         studentListView.adapter = mAdapter
 
+        // 짧게 누르기
         studentListView.setOnItemClickListener{parent,view,position,id ->
             val clickedStudent = mStudentList[position]
 
             Toast.makeText(this, "${clickedStudent.name}이 클릭됨", Toast.LENGTH_SHORT).show()
+        }
+
+        // 길게 누르기
+        studentListView.setOnItemLongClickListener{parent,view,position,id ->
+            val longClickedStudent = mStudentList[position]
+
+            Toast.makeText(this, "${longClickedStudent.name}길게 클릭됨", Toast.LENGTH_SHORT).show()
+
+            return@setOnItemLongClickListener true // true: long 클릭 전용, false : 짧게 누른것도
         }
     }
 }
