@@ -2,6 +2,7 @@ package com.neppplus.listviewpractice
 
 import android.os.Bundle
 import android.widget.ListView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,6 +36,14 @@ class MainActivity : AppCompatActivity() {
 
         mAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
 
-        findViewById<ListView>(R.id.studentListView).adapter = mAdapter
+
+        val studentListView = findViewById<ListView>(R.id.studentListView)
+        studentListView.adapter = mAdapter
+
+        studentListView.setOnItemClickListener{parent,view,position,id ->
+            val clickedStudent = mStudentList[position]
+
+            Toast.makeText(this, "${clickedStudent.name}이 클릭됨", Toast.LENGTH_SHORT).show()
+        }
     }
 }
