@@ -12,6 +12,7 @@ class StudentAdapter(
     val resId:Int,
     val mList:ArrayList<Student>) : ArrayAdapter<Student>(mContext, resId, mList) {
 
+
         val inf = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
