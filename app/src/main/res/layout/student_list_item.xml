@@ -12,6 +12,7 @@
         android:padding="10dp">
 
         <TextView
+            android:id="@+id/nameTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="학생이름"
@@ -19,6 +20,7 @@
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/birthYearTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(1999년생)"

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.neppplus.listviewpractice.R
 import com.neppplus.listviewpractice.datas.Student
 class StudentAdapter(
@@ -22,6 +23,15 @@ class StudentAdapter(
         }
 
         val row = tempRow!!
+
+        val studentData = mList[position]
+
+        val nameTxt = row.findViewById<TextView>(R.id.nameTxt)
+        val birthYearTxt = row.findViewById<TextView>(R.id.birthYearTxt)
+
+        nameTxt.text = studentData.name
+        birthYearTxt.text = "(${studentData.birthYear})"
+
         return row
     }
 }
